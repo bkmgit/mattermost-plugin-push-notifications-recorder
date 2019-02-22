@@ -1,0 +1,41 @@
+{
+  "id": "mattermost-push-notificatin-recorder",
+  "name": "Push notification recorder",
+  "description": "Record information about push notifications sent to the push proxy",
+  "version": "0.1.0",
+  "server": {
+    "executables": {
+      "linux-amd64": "server/dist/plugin-linux-amd64",
+      "darwin-amd64": "server/dist/plugin-darwin-amd64",
+      "windows-amd64": "server/dist/plugin-windows-amd64.exe"
+    }
+  },
+  "settings_schema": {
+    "header": "",
+    "footer": "",
+    "settings": [
+        {
+            "key": "DBDriver",
+            "display_name": "Database Driver",
+            "type": "dropdown",
+            "help_text": "Select which database driver do you want to use",
+            "default": "",
+            "options": [{
+                "display_name": "mysql",
+                "value": "mysql"
+            }, {
+                "display_name": "postgres",
+                "value": "postgres"
+            }]
+        },
+        {
+            "key": "DBConn",
+            "display_name": "Database connection string",
+            "type": "text",
+            "help_text": "",
+            "placeholder": "mmuser:mostest@(localhost:3306)/mattermost_test",
+            "default": "mmuser:mostest@(localhost:3306)/mattermost_test"
+        }
+    ]
+  }
+}
